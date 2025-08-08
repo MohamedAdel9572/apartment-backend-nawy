@@ -29,7 +29,7 @@ This is the backend API for the Apartment Listing application. It is built with 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/apartment-backend.git
+   git clone https://github.com/MohamedAdel9572/apartment-backend-nawy.git
    cd apartment-backend
 
 2. Install dependencies:
