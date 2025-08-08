@@ -1,4 +1,4 @@
-import { Apartment } from "../../model/Apartment";
+import { Apartment } from "../../infrastructure/model/Apartment";
 import { IApartmentRepository } from "../../infrastructure/repositories/IApartmentRepository";
 
 
@@ -9,7 +9,7 @@ export class ApartmentService {
     return this.apartmentRepo.getAll();
   }
 
-  async getApartmentById(id: number): Promise<Apartment | null> {
+  async getApartmentById(id: string): Promise<Apartment | null> {
     return this.apartmentRepo.getById(id);
   }
 
@@ -17,4 +17,8 @@ export class ApartmentService {
     // Add business logic/validation here if needed
     return this.apartmentRepo.create(data);
   }
+
+  async deleteApartment(id: string): Promise<boolean> {
+  return this.apartmentRepo.delete(id);
+}
 }

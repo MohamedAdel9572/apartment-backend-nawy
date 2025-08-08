@@ -1,6 +1,6 @@
 import { IApartmentRepository } from './IApartmentRepository';
-import { Apartment } from "../../model/Apartment";
 import { AppDataSource } from '../../config/data-source';
+import { Apartment } from '../model/Apartment';
 
 export class ApartmentRepository implements IApartmentRepository {
   private repo = AppDataSource.getRepository(Apartment);
@@ -9,11 +9,16 @@ export class ApartmentRepository implements IApartmentRepository {
     return this.repo.find();
   }
 
-  async getById(id: number): Promise<Apartment | null> {
+  async getById(id: string): Promise<Apartment | null> {
     return this.repo.findOneBy({ id });
   }
 
   async create(apartment: Apartment): Promise<Apartment> {
     return this.repo.save(apartment);
+  }
+
+  async delete(id : string): Promise<boolean>{
+    const result = await this.repo.delete(id);
+    return result.affected !== 0;
   }
 }
