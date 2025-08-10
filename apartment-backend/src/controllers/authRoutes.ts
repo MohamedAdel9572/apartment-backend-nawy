@@ -151,8 +151,9 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    await userService.login(username, password);
-    res.json({ message: 'Login successful' });
+    // Assume userService.login returns the token string if login succeeds
+    const token = await userService.login(username, password);
+    res.json({ message: 'Login successful', token });  // <-- return token here
   } catch (err: any) {
     if (err.message === 'Invalid credentials') {
       res.status(401).json({ error: err.message });
@@ -161,5 +162,4 @@ router.post('/login', async (req, res) => {
     }
   }
 });
-
 export default router;
