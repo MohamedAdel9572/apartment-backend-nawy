@@ -70,14 +70,14 @@ const userService = new UserService(userRepository);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/SignupRequest'
+ *             $ref: '#/components/infrastructure/model/User'
  *     responses:
  *       201:
  *         description: User created successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/AuthResponse'
+ *             $ref: '#/components/infrastructure/model/User'
  *       409:
  *         description: Username already exists
  *         content:
@@ -93,7 +93,7 @@ const userService = new UserService(userRepository);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/AuthResponse'
+ *             $ref: '#/components/infrastructure/model/User'
  */
 router.post('/signup', async (req, res) => {
   const { username, password, role } = req.body;
@@ -129,7 +129,7 @@ router.post('/signup', async (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/AuthResponse'
+ *             $ref: '#/components/infrastructure/model/User'
  *       401:
  *         description: Invalid credentials
  *         content:
@@ -145,7 +145,7 @@ router.post('/signup', async (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/AuthResponse'
+ *             $ref: '#/components/infrastructure/model/User'
  */
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
