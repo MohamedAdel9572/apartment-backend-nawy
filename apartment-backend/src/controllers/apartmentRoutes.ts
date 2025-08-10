@@ -31,7 +31,7 @@ const apartmentService = new ApartmentService(apartmentRepository);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Apartment'
+ *                 $ref: '#/components/infrastructure/model/Apartment'
  *       500:
  *         description: Server error
  */
@@ -64,7 +64,7 @@ router.get('/', async (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Apartment'
+ *               $ref: '#/components/infrastructure/model/Apartment'
  *       404:
  *         description: Apartment not found
  *       500:
@@ -97,14 +97,14 @@ router.get('/:id', async (req, res) => {
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Apartment'
+ *             $ref: '#/components/infrastructure/model/Apartment'
  *     responses:
  *       201:
  *         description: Apartment created successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Apartment'
+ *               $ref: '#/components/infrastructure/model/Apartment'
  *       500:
  *         description: Server error
  */
