@@ -12,6 +12,7 @@ This is the backend API for the Apartment Listing application. It is built with 
 - Integrated Swagger UI for API documentation and testing
 - Environment configuration with dotenv
 - CORS enabled for cross-origin requests
+- Json Web Token
 
 ---
 
